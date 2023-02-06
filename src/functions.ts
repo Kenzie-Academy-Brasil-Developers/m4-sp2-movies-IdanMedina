@@ -108,7 +108,7 @@ const deleteMovies = async (req: Request, res: Response): Promise<Response> => {
   }
 
   const queryResult: MovieResult = await client.query(queryConfig)
-  return res.status(201).json(queryResult.rows[0])}
+  return res.status(204).json()}
   ;
 
 

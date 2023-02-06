@@ -6,26 +6,33 @@ CREATE TABLE table_movies(
 	price INTEGER NOT NULL
 );
 
-  SELECT
+SELECT
         *
     FROM
         table_movies
     OFFSET $1 LIMIT $2;
 
- INSERT INTO
+INSERT INTO
         table_movies(%I)
     VALUES
         (%L)
     RETURNING *;
 
-     DELETE FROM
+DELETE FROM
       table_movies
     WHERE
       id = $1;
 
-      SELECT
+SELECT
             *
-        FROM
+    FROM
             table_movies
-        WHERE
+    WHERE
             id= $1;
+
+UPDATE
+      table_movies
+    SET(%I) = ROW(%L)
+    WHERE
+      id = $1
+    RETURNING *;

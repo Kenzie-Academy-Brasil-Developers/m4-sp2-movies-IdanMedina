@@ -9,9 +9,9 @@ interface iMovie {
 }
 
 interface Pagination {
-  prevPage: string | null,
-  nextPage: string | null,
-  count: number,
+  prevPage: string | null;
+  nextPage: string | null;
+  count: number;
   data: iMovie[];
 }
 
